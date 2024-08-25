@@ -7,14 +7,10 @@ public class Gambler extends Hero{
         super(name, health, damage, SuperAbility.ALL_IN);
     }
     Random roll1 = new Random();
-    Random roll2 = new Random();
-    Random HeroRoll = new Random();
-    int dice1 = roll1.nextInt(6) + 1;
-    int dice2 = roll2.nextInt(6) + 1;
-
-
     @Override
     public void applySuperPower(Boss boss, Hero[] heroes) {
+        int dice1 = roll1.nextInt(6) + 1;
+        int dice2 = roll1.nextInt(6) + 1;
         if (dice1 == dice2) {
             System.out.println("Gambler deals damage to the boss");
             if (boss.getHealth() - (dice1 * dice2) <=0 ) {
@@ -25,7 +21,7 @@ public class Gambler extends Hero{
             }
         }
         else {
-            Hero hero = heroes[HeroRoll.nextInt(heroes.length)];
+            Hero hero = heroes[roll1.nextInt(heroes.length)];
             System.out.println(hero.getName() + " receives damage from gambler");
             if (hero.getHealth() - (dice1 + dice2) <=0 ) {
                 hero.setHealth(0);
