@@ -16,8 +16,10 @@ public class RPG_Game {
         Berserk berserk = new Berserk("Viking", 240, 10);
         Medic doc = new Medic("Enstein", 200, 5, 15);
         Medic assistant = new Medic("Green", 300, 5, 5);
+        King king = new King("King", 300, 0);
+        Gambler gambler = new Gambler("Gambler", 260, 10 );
 
-        Hero[] heroes = {warrior1, doc, warrior2, magic, berserk, assistant};
+        Hero[] heroes = {warrior1, doc, warrior2, magic, berserk, assistant, king, gambler};
 
         printStatistics(boss, heroes);
         while (!isGameOver(boss, heroes)) {
